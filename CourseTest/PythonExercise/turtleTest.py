@@ -1,7 +1,7 @@
 from turtle import *
 
 turtle = Turtle()
-turtle.speed(100)
+turtle.speed(10)
 
 # color = ("white", "#057748")
 
@@ -209,4 +209,5 @@ for c in str:
     turtle.pendown()
     count += 1
 
-done()
+# turtle.done()
+# turtle2.done()

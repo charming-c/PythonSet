@@ -1,7 +1,7 @@
 flag = 1
 while flag == 1:
     grade = int(input("please input the grade:"))
-    if grade < 0 or grade >100:
+    if grade < 0 or grade > 100:
         print("the grade in invalide")
     elif grade >= 90 and grade <= 100:
         print("the level of the grade:  A")
@@ -11,4 +11,4 @@ while flag == 1:
         print("the level of the grade:  C")
     else:
         print("the level of the grade:  D")
-    flag = int(input("do you want continue? 1-yes,0-no\n"))
+    flag = int(input("do you want to continue? 1-yes,0-no\n"))

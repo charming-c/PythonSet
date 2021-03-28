@@ -1,3 +1,4 @@
 *.vscode
 *.json
-*/_pycache_/*
+*.png
+__pycache__/

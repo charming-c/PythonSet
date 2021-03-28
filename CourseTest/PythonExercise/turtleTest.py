@@ -208,8 +208,3 @@ for c in str:
     turtle.write(c, move=True, align='center', font=("微软雅黑", 15, "normal"))
     turtle.pendown()
     count += 1
-
-turtle.done()
-turtle2.done()
-turtle.exitonclick()
-turtle2.exitonclick()

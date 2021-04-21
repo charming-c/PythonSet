@@ -25,7 +25,7 @@ for i in range(0, 11):
     if soup.find(class_='grid_view'):
         list = soup.find(class_='grid_view').find_all('li')
 
-        fileName = 'films.json'
+        fileName = 'films.txt'
         with open(fileName, 'a') as f:
 
             for item in list:

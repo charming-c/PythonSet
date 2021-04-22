@@ -22,4 +22,4 @@ if(soup.find('dl', class_="board-wrapper")):
     print(list)
     for item in list:
         item_title = item.find(class_='title')
-print(body)
+print(soup)

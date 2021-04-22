@@ -2,8 +2,8 @@ import requests
 
 # 执行API调用并存储响应
 url = 'https://api.github.com/search/repositories?&q=language:python&sort=stars'
-headers = {'Accept':'application/vnd.github.v3+json'}
-r = requests.get(url,headers = headers)
+headers = {'Accept': 'application/vnd.github.v3+json'}
+r = requests.get(url, headers=headers)
 print(f"status code = {r.status_code}")
 
 # 将api响应返回的结果赋值给一个变量，这里应该是一个字典

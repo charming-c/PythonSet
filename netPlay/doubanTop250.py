@@ -6,8 +6,13 @@ import json
 
 def getFilms(url, header, page):
     try:
+        pos = page*25
+        payload = {
+            'start': str(pos),
+            'filter': ''
+        }
         response = requests.get(
-            url+'?start=' + str(page*25)+'&filter=', headers=header)
+            url, params=payload, headers=header)
         if response.status_code == 200:
             return response.text
     except requests.RequestException:
@@ -26,7 +31,7 @@ for i in range(0, 11):
         list = soup.find(class_='grid_view').find_all('li')
 
         fileName = 'films.txt'
-        with open(fileName, 'a') as f:
+        with open(fileName, 'a+') as f:
 
             for item in list:
                 item_name = item.find(class_='title').string

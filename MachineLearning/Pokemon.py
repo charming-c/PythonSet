@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
 # Pokémon CP prediction by Linear Model
 
 
@@ -28,9 +31,14 @@ delt_w = 0.0
 delt_b = 0.0
 (delt_w, delt_b) = Grad(w, b)
 
+w_history = []
+b_history = []
+
 while abs(delt_w) > rate or abs(delt_b) > rate:
     print("b: "+str(b)+"\t\t\t w: "+str(w)+"\n"+"b_grad: " +
-          str(delt_b)+"\t\t\t w_grad: "+str(delt_w)+"\n")
+          str(delt_w)+"\t\t\t w_grad: "+str(delt_b)+"\n")
+    w_history.append(w)
+    b_history.append(b)
     w -= rate * delt_w
     b -= rate * delt_b
     (delt_w, delt_b) = Grad(w, b)
@@ -39,5 +47,16 @@ print("the function will be y_data="+str(b)+"+"+str(w)+"*x_data")
 miss = 0.0
 for i in range(10):
     miss += abs(Y_data[i]-(b+w*X_data[i]))
-average_error = miss//10
+average_error = miss/10
 print("the average error is "+str(average_error))
+
+
+fig, ax = plt.subplots()
+depth = range(len(w_history))
+ax.scatter(w_history, b_history,
+           c=depth, cmap=plt.cm.Blues, edgecolor='none', s=8)
+
+ax.set_title('Pokémon')
+ax.set_xlabel("w")
+ax.set_ylabel("b")
+plt.savefig("squares4_plot.png")
